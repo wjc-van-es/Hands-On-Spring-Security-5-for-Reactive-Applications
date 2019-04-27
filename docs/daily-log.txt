@@ -1,0 +1,9 @@
+Saturday 27 April 2019
+on willem@willem-Latitude-5590
+Set up this git repository for code examples accompanying
+https://www.packtpub.com/application-development/hands-spring-security-5-reactive-applications by forking
+https://github.com/PacktPublishing/Hands-On-Spring-Security-5-for-Reactive-Applications to
+https://github.com/wjc-van-es/Hands-On-Spring-Security-5-for-Reactive-Applications
+
+(Not yet with BitBucket)
+The projects from chapter 2 and 3 could be built with mvn clean install against jdk1.8.0_202 (from Oracle)
