@@ -1,4 +1,44 @@
-Saturday 27 April 2019
+
+Saturday, 04 May 2019
+on willem@willem-Latitude-5590
+
+We tweaked the Chapter02/jetty-db-basic-authentication/ example using postgreSQL as a database
+1)  Preparing the database with ddl_postgreSQL/postgres_prepare_for_spring_security_schema.sql connected as postgres
+    1.1)    adding new roles:
+            spring_security_owner capable to login and to run schema ddl
+            spring_security_crud_role to grant privileges per db object within ddl
+            spring_security_read_role to grant privileges per db object within ddl
+            spring_security_app capable to log in and granted spring_security_crud_role
+    1.2)    creating spring_security_schema authorizing spring_security_owner as the owner
+    1.3)    granting usage of spring_security_schema to both spring_security_crud_role and spring_security_read_role
+2)  Running ddl_postgreSQL/spring_security_schema_definition.sql connected as spring_security_owner
+    Creating the tables and granting privileges to spring_security_crud_role and spring_security_read_role respectively
+3)  Running ddl_postgreSQL/spring_security_inserts.sql connected as spring_security_app.
+4)  postgreSQLdb.properties added.
+5)  com.packtpub.book.ch02.springsecurity.config.ApplicationConfig#getDataSource modified to use the postgres configurations
+6)  adding the postgres jdbc driver dependency to Chapter02/jetty-db-basic-authentication/pom.xml
+7)  We created com.packtpub.book.ch02.springsecurity.PostgresConnectionIT to locally test the connection and query the schema.
+    Beware that this test will only work if the environment was carefully prepared with a Postgres DB installed plus
+    all the six steps described above. So it is more of an environment test than a source code test.
+    Therefore, by using the IT suffix instead of Test this test will be ignored by the maven surefire plugin during
+    builds so these builds will succeed regardless of the environment.
+    The test was successful so the environment was configured correctly.
+8)  After a maven clean package we used jetty:run to start the application
+    connecting the browser to http://localhost:8080 prompted for basic authentication and both username/password
+    combinations were successful:
+        User = admin    and password = admin@password
+        User = user     and password = user@password
+
+
+========================================================================================================================
+Saturday, 04 May 2019
+on willem@willem-Latitude-5590
+Well under way in chapter 2 recreating the Sample application from page 47 onwards until page 60.
+Implementing all source code under com.packtpub.book.ch02.springsecurity:jetty-db-basic-authentication:1.0-SNAPSHOT.
+
+To get it running with a database we will tweak the example to run it on PostgreSQL.
+========================================================================================================================
+Saturday, 27 April 2019
 on willem@willem-Latitude-5590
 Set up this git repository for code examples accompanying
 https://www.packtpub.com/application-development/hands-spring-security-5-reactive-applications by forking

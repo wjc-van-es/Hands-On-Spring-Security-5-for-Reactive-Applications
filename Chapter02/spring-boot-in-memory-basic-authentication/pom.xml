@@ -7,7 +7,7 @@
     <groupId>com.packtpub.book.ch02.springsecurity</groupId>
     <artifactId>spring-boot-in-memory-basic-authentication</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Packt Publication Chapter 02 Spring Security Basic In-Memory DB Authentication</name>
+    <name>Packt Publication Chapter 02 Spring Boot Security Basic In-Memory DB Authentication</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
