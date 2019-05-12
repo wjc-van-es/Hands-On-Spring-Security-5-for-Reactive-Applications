@@ -1,4 +1,42 @@
+Sunday, 12 May 2019
+on willem@willem-Latitude-5590
 
+Trying out the remainder of chapter 2
+The jetty-in-memory-basic-authentication works as is, but the spring-boot-in-memory-basic-authentication is not finished
+yet and the book states it works when you add the @SpringBootApplication annotated example class
+com.packtpub.book.ch02.springsecurity.Run with its special main() implementation to the previous example. This, however,
+is not really clear as you would have a lot of unnecessary classes in the com.packtpub.book.ch02.springsecurity.config
+package. The whole point is that a lot of default configuration code is encapsulated from you and extra configurations
+are usually set as properties inside application.properties.
+This properties file is already present and contains:
+    spring.mvc.view.prefix: /WEB-INF/views/
+    spring.mvc.view.suffix: .jsp
+which replaces info previously configured by
+com.packtpub.book.ch02.springsecurity.config.WebApplicationConfig.configureViewResolvers.
+Moreover,
+    com.packtpub.book.ch02.springsecurity.config.SpringMvcWebApplicationInitializer and
+    com.packtpub.book.ch02.springsecurity.config.SecurityWebApplicationInitializer
+appear to be unnecessary in the SpringBoot application.
+Finally, we would only need the extra
+    com.packtpub.book.ch02.springsecurity.config.ApplicationConfig
+if we needed a special factory method (with the @Bean annotation), that is, if we deviated by the defaults provided
+by SpringBoot, which can configure a lot of default components just by adding a view properties to application.properties
+
+Therefore, it turns out that besides the new
+    com.packtpub.book.ch02.springsecurity.Run
+We only have to copy
+    src/main/webapp/WEB-INF/views/home.jsp,
+    com.packtpub.book.ch02.springsecurity.controller.HomeController and
+    com.packtpub.book.ch02.springsecurity.config.SpringSecurityConfig
+
+Thus, after running mvn clean package and then mvn spring-boot:run we could test the basic authentication from the browser
+after choosing http://localhost:8080.
+
+Tweaking com.packtpub.book.ch02.springsecurity.config.SpringSecurityConfig.configure(
+org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder) substituting
+adminBoot for admin as user and "{noop}adminBoot@password" as password we tested that these changes compelled
+the user/tester of the browser to provide these new credentials.
+========================================================================================================================
 Saturday, 04 May 2019
 on willem@willem-Latitude-5590
 
