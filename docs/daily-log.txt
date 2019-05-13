@@ -1,3 +1,15 @@
+Monday, 13 May 2019
+on willem@willem-Latitude-5590
+
+Today we tested the com.packtpub.book.ch03.springsecurity:spring-boot-ldap-basic-authentication:1.0-SNAPSHOT application
+and read that part of chapter 3.
+We will tweak theexample to be a little more elaborate
+(see also
+/media/willem/Blue Seagate Backup Plus Drive/Backups/ne72pg@WPU8L0011276.ad.ing.net/Resources/git/gitlab/FENIKS-FLOW/
+feniks-flow-application/src/main/resources/config/application-local.properties and
+/media/willem/Blue Seagate Backup Plus Drive/Backups/ne72pg@WPU8L0011276.ad.ing.net/Resources/git/gitlab/FENIKS-FLOW/
+feniks-flow-application/src/main/java/nl/ing/lending/feniksflow/config/security/WebSecurityConfig.java
+========================================================================================================================
 Sunday, 12 May 2019
 on willem@willem-Latitude-5590
 
