@@ -7,7 +7,7 @@
     <title>Spring Security</title>
 </head>
 <body>
-<h1>Spring Security OAuth and OIDC Sample</h1>
+<h1>Callback page Spring Security OAuth and OIDC Sample</h1>
 <h2>${msg}</h2>
 <h3>base URL: ${baseUrl}</h3>
 <h3>${registrationId}</h3>

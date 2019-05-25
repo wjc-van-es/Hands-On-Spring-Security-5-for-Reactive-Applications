@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses=HomeController.class)
+@ComponentScan(basePackages="com.packtpub.book.ch03.springsecurity.springbootoauthoidcauthentication.controller")
 public class SpringBootOauthOidcAuthenticationApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {

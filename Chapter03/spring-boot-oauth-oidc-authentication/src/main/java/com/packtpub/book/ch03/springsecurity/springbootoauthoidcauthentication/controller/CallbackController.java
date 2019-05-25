@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.security.Principal;
 
 @Controller
-public class HomeController {
+public class CallbackController {
 
-    @GetMapping("/home")
-    public String home(Model model, Principal principal) {
+    @GetMapping("/callback")
+    public String callback(Model model, Principal principal) {
         if(principal != null) {
             System.out.println(principal.getName());
             model.addAttribute("msg", "Welcome " + principal.getName() + " into Spring Boot OAuth and OIDC.");
         }
-        return "home";
+        return "callback";
     }
 }

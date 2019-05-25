@@ -1,3 +1,58 @@
+Saturday, 25 May 2019
+on willem@willem-Latitude-5590
+
+Instructions for registering your application to github and bit bucket respectively
+https://auth0.com/docs/connections/social/github
+Settings > Developer settings > OAuth Apps [new OAuth App]
+
+Client ID
+8eb5128d2d36833adc5b
+Client Secret
+f4f76dddd8e0f194875748bf356e1cb4bfa408a1
+
+Application name
+spring-security-private-test-app-github
+
+Homepage URL
+http://localhost:8080/home
+The full URL to your application homepage.
+
+Application description
+This is a test spring security based application to experiment with OIDC
+This is displayed to all users of your application.
+
+Authorization callback URL
+http://localhost:8080/callback
+Your application’s callback URL. Read our OAuth documentation for more information.
+
+https://auth0.com/docs/connections/social/bitbucket
+Settings > Access Management / OAuth
+
+For bitbucket a whole load of application properties had to be filled out before the application started without exceptions
+but we fixed that somehow by combining:
+https://stackoverflow.com/questions/49315552/authorizationgranttype-cannot-be-null-in-spring-security-5-oauth-client-and-spri
+https://stackoverflow.com/questions/53935291/springboot-2-x-spring-5-x-oauth-2-0-spring-security-bitbucket-integration
+https://developer.atlassian.com/cloud/bitbucket/oauth-2/
+https://docs.spring.io/spring-security/site/docs/current/reference/html5/#oauth2login-boot-property-mappings
+https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/oauth2/core/AuthorizationGrantType.html
+https://pattern-match.com/blog/2018/10/17/springboot2-with-oauth2-integration/
+https://docs.spring.io/spring-security/site/docs/current/reference/html5/#oauth2login-boot-property-mappings
+
+The example was barely sufficient
+The Google example returned to the callback page, but both the GitHub and BitBucket example keep returning to the login page
+apparantly there is something wrong so they don't return to the callback page (Is it the use of localhost?)
+Two options: we could set up some universal error pages see how to do that with Spring in Action 5th edition
+Trying out some other tutorials:
+https://www.javacodegeeks.com/2019/03/quick-guide-oauth-spring-security.html
+https://pattern-match.com/blog/2018/10/17/springboot2-with-oauth2-integration/
+https://pattern-match.com/blog/2019/02/12/springboot2-and-oauth2-authorization-and-revocation/
+https://spring.io/blog/2018/03/06/using-spring-security-5-to-integrate-with-oauth-2-secured-services-such-as-facebook-and-github
+https://spring.io/guides/tutorials/spring-boot-oauth2/ (starts with facebook second part adds GitHub capabilities)
+
+https://docs.spring.io/spring-security/site/docs/current/reference/html5/
+
+https://github.com/robwinch/github-cla
+========================================================================================================================
 Monday, 13 May 2019
 on willem@willem-Latitude-5590
 
