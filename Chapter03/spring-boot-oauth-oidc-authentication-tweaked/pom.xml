@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.packtpub.book.ch03.springsecurity</groupId>
-	<artifactId>spring-boot-oauth-oidc-authentication</artifactId>
+	<artifactId>spring-boot-oauth-oidc-authentication-tweaked</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-oauth-oidc-authentication</name>
+	<name>Packt Publication Chapter 03 Tweaked spring-boot-oauth-oidc-authentication</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -22,9 +22,24 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<logback.version>1.2.3</logback.version>
+		<jcloverslf4j.version>1.7.26</jcloverslf4j.version>
+		<junit.version>4.12</junit.version>
 	</properties>
 
 	<dependencies>
+		<!-- LogBack dependencies -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${jcloverslf4j.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
