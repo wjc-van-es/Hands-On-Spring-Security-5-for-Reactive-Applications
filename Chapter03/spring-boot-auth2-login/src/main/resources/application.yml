@@ -2,10 +2,16 @@ server:
   port: 8080
 
 logging:
+  file: ${user.home}/application-logs/boot-auth2login/boot-auth2login.log
   level:
     root: INFO
     org.springframework.web: INFO
-    org.springframework.security: INFO
+#    set to DEBUG when you've got a problem with security
+#    org.springframework.security: DEBUG
+#    set to DEBUG to trigger the filter logging every request and response handled by our application
+    nl.vea.samples.spring.security.boot.auth2login.filter: DEBUG
+#    logging of controllers
+    nl.vea.samples.spring.security.boot.auth2login.web: INFO
 #    org.springframework.boot.autoconfigure: DEBUG
 
 spring:

@@ -1,3 +1,17 @@
+Wednesday, 29 May 2019
+on willem@willem-Latitude-5590
+
+We configured basic logging in
+Hands-On-Spring-Security-5-for-Reactive-Applications/Chapter03/spring-boot-auth2-login/src/main/resources/application.yml
+after consulting https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+We added the nl.vea.samples.spring.security.boot.auth2login.filter.TrafficContentLogger and we find it logs all calls
+that would reach any of the Application's controllers, but not the traffic intercepted by Spring's security filters.
+ToDo: We might be able to force a change in the filter chain order.
+
+The next thing ToDO is to introduce jasypt in the projects nl.vea.samples.spring-security:boot-auth2login:1.0-SNAPSHOT and
+nl.vea.samples.spring-security:spring-boot-oauth-oidc-authentication-tweaked:0.0.1-SNAPSHOT
+========================================================================================================================
 Sunday, 25 May 2019
 on willem@willem-Latitude-5590
 
