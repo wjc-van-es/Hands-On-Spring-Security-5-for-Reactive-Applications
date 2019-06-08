@@ -7,11 +7,13 @@ logging:
     root: INFO
     org.springframework.web: INFO
 #    set to DEBUG when you've got a problem with security
-#    org.springframework.security: DEBUG
+    org.springframework.security: DEBUG
 #    set to DEBUG to trigger the filter logging every request and response handled by our application
-    nl.vea.samples.spring.security.boot.auth2login.filter: DEBUG
+    nl.vea.samples.spring.security.boot.auth2login: DEBUG
+
+#    nl.vea.samples.spring.security.boot.auth2login.encrypt: DEBUG
 #    logging of controllers
-    nl.vea.samples.spring.security.boot.auth2login.web: INFO
+#    nl.vea.samples.spring.security.boot.auth2login.web: DEBUG
 #    org.springframework.boot.autoconfigure: DEBUG
 
 spring:
@@ -23,19 +25,38 @@ spring:
         registration:
           google:
             client-id: 1085570125650-l8j2r88b5i5gbe3vkhtlf8j7u3hvdu78.apps.googleusercontent.com
-            client-secret: MdtcKp-ArG51FeqfAUw4K8Mp
+            client-secret: ENC(dGQvVpoBd1TKq2b9/WWbhFXpNne4VRkxCox9cJ39KEQFeXWjkIYLggRScphfrtsd)
           github:
             client-id: 8eb5128d2d36833adc5b
-            client-secret: CHANGE-TO-CURRENT-VALUE
+            client-secret: ENC(gX/BS4T8Y7P+ixS7fD9ieqdYYmx5MRVdAmyPP0LBPQkYBZRgcmIx3P2p/DsJSEoVS7vsn+d3IBCe51AhzRnXmg==)
           facebook:
             client-id: your-app-client-id
             client-secret: your-app-client-secret
           okta:
-            client-id: your-app-client-id
-            client-secret: your-app-client-secret
+            issuer: https://dev-259545.okta.com/oauth2/default
+            client-id: 0oansf64pvRgiOMVQ356
+            client-secret: ENC(0LesoW/ipntCEThtnuBsMbCxROWQfd2tO22vEj2ksun7bMJuwxYopToXY6qFhtfGoF838LZUaCuyz00R+Nfmhw==)
+            redirect-uri-template: http://localhost:8080/authorization-code/callback
         provider:
           okta:
-            authorization-uri: https://your-subdomain.oktapreview.com/oauth2/v1/authorize
-            token-uri: https://your-subdomain.oktapreview.com/oauth2/v1/token
-            user-info-uri: https://your-subdomain.oktapreview.com/oauth2/v1/userinfo
-            jwk-set-uri: https://your-subdomain.oktapreview.com/oauth2/v1/keys
+            authorization-uri: https://dev-259545.okta.com/oauth2/default/v1/authorize
+            token-uri: https://dev-259545.okta.com/oauth2/default/v1/token
+            user-info-uri: https://dev-259545.okta.com/oauth2/default/v1/userinfo
+            jwk-set-uri: https://dev-259545.okta.com/oauth2/default/v1/keys
+            user-name-attribute: sub
+
+#ToDO move to environment variable, which is the safest option
+#As intermediate option you can add the password as CL argument
+jasypt:
+  encryptor:
+#    password: stored elsewhere
+
+    algorithm: PBEWITHSHA256AND256BITAES-CBC-BC
+    providerName: BC
+
+application:
+  test:
+    fake-password: IkHebSlechtsEenTestDoel%123
+
+    # with PBEWITHSHA256AND256BITAES-CBC-BC and BC
+    enc-fake-password: ENC(iNMpksKfD5Fnde6oG5Mad5kT2IhTaWAeGaiQmO7zeejwJpe+ZjSCL2B8CoexnQUm)

@@ -1,3 +1,23 @@
+Sunday, 2 June 2019
+on willem@willem-Latitude-5590
+
+tinkering getting Jasypt to work with Spring Boot:
+works with simple test but encrypted password in application.yml cannot be loaded:
+Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException:
+ Could not resolve placeholder 'enc-fake-password' in value "${enc-fake-password}"
+ It is not aBouncyCastle or enhanced security policy problem as we get the same error with the defaults: PBEWithMD5AndDES and
+ and SunJCE as well
+Although it should be simple enough:
+http://mbcoder.com/spring-boot-how-to-encrypt-properties-in-application-properties/
+
+
+https://github.com/ulisesbocchio/jasypt-spring-boot
+https://github.com/ulisesbocchio/jasypt-spring-boot-samples/blob/master/jasypt-spring-boot-demo/src/main/java/demo/DemoApplication.java
+
+https://www.baeldung.com/spring-boot-jasypt
+To be continued
+
+========================================================================================================================
 Wednesday, 29 May 2019
 on willem@willem-Latitude-5590
 
@@ -65,6 +85,9 @@ https://developer.atlassian.com/cloud/bitbucket/oauth-2/ under
 and https://bitbucket.org/atlassian/bb-cloud-auth-code-grant-sample-app/src/master/routes/index.js
 and https://api.bitbucket.org/2.0/user/emails as spring.security.oauth2.client.provider.bitbucket.user-info-uri
 see also https://developer.atlassian.com/bitbucket/api/2/reference/resource/user/emails
+
+General info see also:
+https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#openid-sample
 ========================================================================================================================
 Saturday, 25 May 2019
 on willem@willem-Latitude-5590
